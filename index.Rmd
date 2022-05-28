@@ -150,22 +150,8 @@ ggplot2_covid_cantonal_barras <- ggplot(data = covid_cantonal_positivos, aes(x =
 ```
 
 
-
-
-
 ```{r otro_grafico}
 ggplot(data = covid_cantonal_positivos, aes(x = canton, y = positivos)) + 
   geom_bar(stat = "identity", width=0.4)
 ```
-
-```{r ihdihd}
-ggplot2_covid_cantonal_barras <-
-  covid_cantonal_positivos %>%
-  ggplot(aes(x = canton, y = positivos, color = variable)) +
-  ggtitle("Casos acumulados de covid-19 en Costa Rica") +
-  xlab("Cantones") +
-  ylab("Positivos") 
-```
-
-
 
