@@ -146,7 +146,7 @@ ggplot2_covid_cantonal_barras <-
   ggtitle("Casos positivos por canton de COVID-19 en Costa Rica") +
   xlab("Cantones") +
   ylab("Positivos") +
-  theme(axis.text.x = element_text(angle = 90, size = 5))
+  theme(axis.text.x = element_text(angle = 90, size = 6.5))
 ```
      
 ```{r muestra-canton}
