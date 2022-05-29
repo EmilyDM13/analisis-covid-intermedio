@@ -137,21 +137,39 @@ covid_cantonal_positivos %>%
 
 ### Casos por cantón gráfico de barras
 
-```{r grafico_canton}
-ggplot2_covid_cantonal_barras <- ggplot(data = covid_cantonal_positivos, aes(x = canton, y = positivos)) + 
-    geom_bar(stat="identity", position="dodge") +
-    ggtitle("Casos positivos por canton de COVID-19 en Costa Rica") +
-    xlab("Cantones") +
-    ylab("Positivos")
+```{r grafico-canton}
+ggplot2_covid_cantonal_barras <-
+  ggplot(data = covid_cantonal_positivos, aes(x = canton, y = positivos)) +
+  geom_bar(width = 0.5,
+           stat = "identity",
+           position = "dodge") +
+  ggtitle("Casos positivos por canton de COVID-19 en Costa Rica") +
+  xlab("Cantones") +
+  ylab("Positivos") +
+  theme(axis.text.x = element_text(angle = 90, size = 5))
 ```
-
+     
 ```{r muestra-canton}
  ggplotly(ggplot2_covid_cantonal_barras) %>% config(locale = 'es')
 ```
 
-
-```{r otro_grafico}
-ggplot(data = covid_cantonal_positivos, aes(x = canton, y = positivos)) + 
-  geom_bar(stat = "identity", width=0.4)
+```{r grafico-canton-colores}
+ggplot2_covid_cantonal_barras <-
+  ggplot(data = covid_cantonal_positivos, aes(x = canton, y = positivos, fill = canton)) +
+  geom_bar(width = 0.5,
+           stat = "identity",
+           position = "dodge") +
+  ggtitle("Casos positivos por canton de COVID-19 en Costa Rica") +
+  xlab("Cantones") +
+  ylab("Positivos") +
+  theme(axis.text.x = element_text(angle = 90, size = 5))
 ```
+
+```{r muestra-canton-colores}
+ ggplotly(ggplot2_covid_cantonal_barras) %>% config(locale = 'es')
+```
+
+
+
+
 
